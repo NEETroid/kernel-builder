@@ -1,6 +1,6 @@
 name: Building TWRP Android 11
 
-on: # [push]
+on: [push]
 #  release:
 #    types: [published]
 #  push:
@@ -11,9 +11,9 @@ on: # [push]
 #  schedule:
 #    - cron: 0 8 * * 5
 # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-  watch:
-    types: [started]
+  # workflow_dispatch:
+  # watch:
+  #   types: [started]
 
 env:
   MANIFEST: git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
@@ -62,7 +62,7 @@ jobs:
               cd work
               . build/envsetup.sh && lunch twrp_$DEVICE-eng 
               repo sync -j4
-              export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+              export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j4
              
        - name: Uploading recovery image
          run: |
