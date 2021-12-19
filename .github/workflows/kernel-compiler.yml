@@ -1,0 +1,266 @@
+name: Building New Kernel
+
+on: [push]
+
+env:
+  GIT_SECRETB: ${{ secrets.GIT_SECRETB }}
+  GIT_SECRET: ${{ secrets.GIT_SECRET }}
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+  ZIP_PASS: ${{ secrets.ZIP_PASS }}
+  TZ: Asia/Jakarta
+
+jobs:
+  build-begonia-q-oss-uv:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-uv'
+
+  build-begonia-q-oss-uv-b:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-uv-b'
+
+  build-begonia-q-oss-uv-c:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-uv-c'
+
+  build-begonia-q-oss-uv-d:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-uv-d'
+
+  build-begonia-q-oss-std:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-std'
+
+  build-begonia-q-oss-std-b:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-std-b'
+
+  build-begonia-q-oss-std-c:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-std-c'
+
+  build-begonia-q-oss-std-d:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-std-d'
+
+  build-begonia-q-oss-stock:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-stock'
+
+  build-begonia-q-oss-stock-b:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-stock-b'
+
+  build-begonia-q-oss-stock-c:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          sudo bash misc/initialize.sh
+
+      - name: Set Swap Space
+        run: |
+          chmod +x misc/setswap.sh
+          sudo bash misc/setswap.sh 14
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-q-oss-stock-c'
+
